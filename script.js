@@ -67,7 +67,7 @@ try {
     console.log(test.innerText); 
   
   } catch (err) { 
-    console.error('there was an error');
+    console.error('This is my try-catch error');
   }
   
 
@@ -127,7 +127,10 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
   
       //alert(message);
       console.log('window.onerror was triggered')
+      console.error('This is my window.onerror error')
     }
   
     return false;
   };
+
+  TrackJS.track('Testing TrackJS!');
