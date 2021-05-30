@@ -115,7 +115,7 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
     var string = msg.toLowerCase();
     var substring = "script error";
     if (string.indexOf(substring) > -1){
-      alert('Script Error: See Browser Console for Detail');
+      alert('Global error: See Browser Console for Detail');
     } else {
       var message = [
         'Message: ' + msg,
@@ -134,3 +134,10 @@ window.onerror = function (msg, url, lineNo, columnNo, error) {
   };
 
   TrackJS.track('Testing TrackJS!');
+
+
+//Trigger global error
+document.getElementById("global-error").addEventListener("click", function() {
+    document.querySelector('#first-num').value = 'e'; //Put something that isn't a number in the first box, then try to calculate
+    document.querySelector('#calculate').click();
+});
