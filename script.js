@@ -61,7 +61,7 @@ document.getElementById("trace-button").addEventListener("click", function() {
 //TODO if time, go back and make this more complicated like involving the actual calculator thing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //TODO use finally also I guess???        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Try catch block
-/*
+
 try {
     let test = document.getElementById('try-catch-button'); //Commented out in index.html so will be undefined
     console.log(test.innerText); 
@@ -69,7 +69,7 @@ try {
   } catch (err) { 
     console.error('there was an error');
   }
-  */
+  
 
   
 class myCustomError extends Error {
@@ -110,7 +110,24 @@ let calculateBtn = document.querySelector('#calculate');
 });
 
 
-
-if(window.onerror){
-    console.log('an error exists');
-}
+//Oh ok good, this works for myCustomError... for some reason... ok whatever
+window.onerror = function (msg, url, lineNo, columnNo, error) {
+    var string = msg.toLowerCase();
+    var substring = "script error";
+    if (string.indexOf(substring) > -1){
+      alert('Script Error: See Browser Console for Detail');
+    } else {
+      var message = [
+        'Message: ' + msg,
+        'URL: ' + url,
+        'Line: ' + lineNo,
+        'Column: ' + columnNo,
+        'Error object: ' + JSON.stringify(error)
+      ].join(' - ');
+  
+      //alert(message);
+      console.log('window.onerror was triggered')
+    }
+  
+    return false;
+  };
