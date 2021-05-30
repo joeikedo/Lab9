@@ -44,30 +44,17 @@
   <section id="error-btns">
     <button id=log-button>Console Log Demo</button>
     <button id=error-button>Console Error Demo</button>
-    <button>Console Dir</button>
-    <button>Console dirxml</button>
-    <button>Console Group Start</button>
-    <button>Console Group End</button>
+    <button id=dir-button>Console Dir</button>
+    <button id=dirxml-button>Console dirxml</button>
+    <button id=group-start>Console Group Start</button>
+    <button id=group-end>Console Group End</button>
     <button id=table-button>Console Table</button>
-    <button>Start Timer</button>
-    <button>End Timer</button>
-    <button>Console Trace</button>
+    <button id=time-start>Start Timer</button>
+    <button id=time-end>End Timer</button>
+    <button id=trace-button>Console Trace</button>
     <button>Trigger a Global Error</button>
+    <!--<button id=try-catch-button>Try catch helper</button>-->
   </section>
-
-  <script>
-    let calculateBtn = document.querySelector('#calculate');
-    calculateBtn.addEventListener('click', () => {
-      let output = document.querySelector('output');
-      let firstNum = document.querySelector('#first-num').value;
-      let secondNum = document.querySelector('#second-num').value;
-      let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
-    });
-
-    let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
-    // TODO - Make buttons functional
-  </script>
   <script src="./script.js" type="module"></script>
 </body>
 </html>
