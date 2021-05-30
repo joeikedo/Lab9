@@ -58,8 +58,6 @@ document.getElementById("trace-button").addEventListener("click", function() {
 });
 
 
-//TODO if time, go back and make this more complicated like involving the actual calculator thing!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//TODO use finally also I guess???        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //Try catch block
 
 try {
