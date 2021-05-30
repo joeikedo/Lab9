@@ -69,6 +69,9 @@ try {
   } catch (err) { 
     console.error('This is my try-catch error');
   }
+  finally{
+      console.log('The error was caught in the catch block, and this log statement executed in the finally block.')
+  }
   
 
   
